@@ -79,9 +79,15 @@ musicaFocoInput.addEventListener("change", () => {
 
 const contagemRegressiva = () => {
   if (tempoDecorridoEmSegundos <= 0) {
-    zerar();
     somTemporizadorZerado.play();
     alert("Tempo esgotado!");
+    const focoAtivo = html.getAttribute("data-contexto") == "foco";
+    if (focoAtivo) {
+      const evento = new CustomEvent("FocoFinalizado");
+      document.dispatchEvent(evento);
+    }
+
+    zerar();
     return;
   }
   tempoDecorridoEmSegundos -= 1;
