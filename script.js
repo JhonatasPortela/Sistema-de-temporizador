@@ -21,7 +21,7 @@ let tempoDecorridoEmSegundos = 1500;
 let intervaloId = null;
 
 focoBtn.addEventListener("click", () => {
-  tempoDecorridoEmSegundos = 15;
+  tempoDecorridoEmSegundos = 1500;
   alterarContexto("foco");
   focoBtn.classList.add("active");
 });
